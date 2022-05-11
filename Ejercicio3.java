@@ -1,17 +1,15 @@
 public class Ejercicio3 {
     public static void main(String[] args) {
-        int i,j,k,base;
-        base=10; 
-        for(i=1; i<base+(base/2); i++){
-            for(j=base+(base/2); j>i; j--){
-                System.out.print(" ");}
-            for(k=1; k<=2*i-1; k++){
-                System.out.print("*");}
-            System.out.println("");
-        }
-        System.out.println("             ***");
-        System.out.println("             ***");
-        System.out.println("            *****");
-        System.out.println("           *******");
+        for(int i=1;i<=1000;i++){
+			int count=0;
+			for(int j=1;j<=i;j++){
+				if(i%j==0){
+					count++;
+				}
+			}
+			if(count==2){
+				System.out.println(i);
+			}
+        }    
     }
 }

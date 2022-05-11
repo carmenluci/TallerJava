@@ -3,35 +3,31 @@ import java.util.Scanner;
 public class Ejercicio5 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int opc;
-        String nombre;
+        int fila, columna;
+        int matriz[][] = new int[10][10];
 
-        System.out.println("Menú de usuarios");
 
-        do {
-            System.out.println("Elija una opción:");
-            System.out.println("1. Capturar nombre");
-            System.out.println("2. Saludar persona");
-            System.out.println("3. Salir del sistema");
-            opc = teclado.nextInt();
-
-            switch (opc) {
-                case 1:
-                    System.out.println("Escriba su nombre:");
-                    teclado.nextLine();
-                    nombre = teclado.nextLine();
-                    break;
-                case 2:
-                    System.out.println("Escriba su nombre");
-                    teclado.nextLine();
-                    nombre = teclado.nextLine();
-                    System.out.println("Hola, bienvenido, "+nombre+" deseo que tengas un buen día");
-                    break;
-                case 3:
-                    System.out.println("Gracias, que tenga un buen día"); 
-                    break; 
-                
+        for(int i = 1; i<11; i++){
+            System.out.print(i-1 +" ");
+            for(int j = 1; j<11; j++){
+                System.out.print(" "+j + "X" + i);
             }
-        } while (opc != 3);
+            System.out.println("");
+        }
+
+        System.out.println("");
+
+        for(fila = 0; fila<10; fila++){
+            for(columna = 0; columna<10; columna++){
+                matriz[fila][columna] = fila*columna;
+            }
+        }
+
+        System.out.println("A continuación escriba la fila que desea consultar:");
+        fila = teclado.nextInt();
+        System.out.println("A continuación escriba la columna que desea consultar:");
+        columna = teclado.nextInt();
+        System.out.println("El resultado es: "+ matriz[fila][columna]);
+
     }
 }
