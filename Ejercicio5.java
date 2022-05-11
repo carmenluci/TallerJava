@@ -1,35 +1,37 @@
 import java.util.Scanner;
+
 public class Ejercicio5 {
     public static void main(String[] args) {
-        int productos, s, p, c;
-        String caractcas, razonDev, compProducto;
-
         Scanner teclado = new Scanner(System.in);
-        System.out.println("¿Qué producto desea comprar?");
-        compProducto =teclado.nextLine();
+        int opc;
+        String nombre;
 
-        System.out.println("1. Consultar precio del producto");
-        System.out.println("2. Comprar prducto");
-        System.out.println("3. Realizar devolución");
-        productos = teclado.nextInt();
+        System.out.println("Menú de usuarios");
 
-        if (productos==1) {
-            s = 65000;
-            p = 53000; 
-            c = 47000;
-            System.out.println("Medicamentos: "+s);
-            System.out.println("Aseo personal: "+p);
-            System.out.println("Cuidado de la piel: "+c);
-        }
-        if (productos==2) {
-            System.out.println("Su producto ha sido asignado a la lista de compra");
-        }
-        if (productos==3) {
-            System.out.println("Escriba la razón de la devolución del producto");
-            teclado.nextLine();
-            caractcas = teclado.nextLine();
-        }else {
-            System.out.println("Gracias por visitar nuestra tienda virtual, que tenga un buen día");
-        }
+        do {
+            System.out.println("Elija una opción:");
+            System.out.println("1. Capturar nombre");
+            System.out.println("2. Saludar persona");
+            System.out.println("3. Salir del sistema");
+            opc = teclado.nextInt();
+
+            switch (opc) {
+                case 1:
+                    System.out.println("Escriba su nombre:");
+                    teclado.nextLine();
+                    nombre = teclado.nextLine();
+                    break;
+                case 2:
+                    System.out.println("Escriba su nombre");
+                    teclado.nextLine();
+                    nombre = teclado.nextLine();
+                    System.out.println("Hola, bienvenido, "+nombre+" deseo que tengas un buen día");
+                    break;
+                case 3:
+                    System.out.println("Gracias, que tenga un buen día"); 
+                    break; 
+                
+            }
+        } while (opc != 3);
     }
 }

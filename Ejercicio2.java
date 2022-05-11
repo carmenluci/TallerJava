@@ -1,17 +1,23 @@
-import java.util.Scanner;
-
 public class Ejercicio2 {
     public static void main(String[] args) {
+        int lineas = 10;
+        int i = 0;
+        int j = 0;
+        int k = 0;
 
-        int edad;
-
-        Scanner teclado = new Scanner(System.in);
-
-        System.out.println("Escriba su edad");
-        edad = teclado.nextInt();
-
-        if (edad<=18) {
-            System.out.println("Usted aun es un niño(a)");
+        while (i<=lineas) {
+            while (j<=(lineas-i)) {
+                System.out.print(" ");
+                j++;
+            }
+            while (k<=i) {
+                System.out.print("*");
+                k++;
+            }
+            System.out.println("");
+            i++;
+            j = 0;
+            k = 0;
         }
     }
 }

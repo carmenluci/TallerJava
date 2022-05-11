@@ -1,29 +1,52 @@
 import java.util.Scanner;
 public class Ejercicio8 {
     public static void main(String[] args) {
-        Scanner teclado=new Scanner(System.in);
-        int opciones, precio, cantidad, precMedTorta, precEntera;
-        boolean opcCompra;
-        precMedTorta=18000;
-        precEntera=25000;
-        System.out.println("Elija una opción de nuestras tortas disponibles:");
-        System.out.println("1. Torta de chocolate de 1 libra");
-        System.out.println("2. Torta de chocolate de 1/2 libra");
-        System.out.println("3. Torta de zanahoria de 1 libra");
-        System.out.println("4. Torta de chocolate de 1/2 libra");
-        opciones = teclado.nextInt();
+        Scanner teclado = new Scanner(System.in);
+        String nomAlumno;
+        int edad, opc;
+        long docum;
+        boolean aprobado = true;
 
-        if (opciones==1) {
-            System.out.println("Ha elejido torta de chocolate de 1 libra su compra es de: "+precEntera+ ". Gracias por su compra");
+        do {
+            System.out.println("Bienvenido a nuestra escuela, elija la opción que desea:");
+            System.out.println("1. Registrarse en nuestros cursos");
+            System.out.println("2. Consultar aprobación del curso");
+            System.out.println("3. Salir de la aplicación");
+            opc = teclado.nextInt();
+
+        switch (opc) {
+            case 1:
+            System.out.println("Escuela de automovilismo EL MAESTRO");
+            System.out.println("Inscribase si desea hacer parte de uno de nuestros cursos");
+            System.out.println("Nombre y apellidos:");
+            teclado.nextLine();
+            nomAlumno = teclado.nextLine();
+            System.out.println("Número de documento:");
+            docum = teclado.nextLong();
+            System.out.println("Edad:");
+            edad = teclado.nextInt();
+            System.out.println("Su registro se ha realizado con éxito");
+            break;
+            
+            case 2:
+            System.out.println("Nombre del alumno:");
+            teclado.nextLine();
+            nomAlumno = teclado.nextLine();
+            System.out.println("Documento de identidad:");
+            docum = teclado.nextLong();
+            if(aprobado){
+                System.out.println("Usted aprobó el curso");
+            }else{
+                System.out.println("Usted no aprobó el curso");
+            }
+            break;
+            case 3:
+            System.out.println("Gracias, que tenga un buen día");
+            break;
+            
         }
-        if (opciones==2) {
-            System.out.println("Ha elejido torta de chocolate de 1/2 libra su compra es de: "+precMedTorta+". Gracias por su compra");
-        }
-        if (opciones==3) {
-            System.out.println("Ha elejido torta de zanahoria de 1 libra su compra es de: "+precEntera+". Gracias por su compra");
-        } 
-        if (opciones==4) {
-            System.out.println("Ha elejido torta de zanahoria de 1/2 libra su compra es de: "+precMedTorta+". Gracias por su compra");
-        }  
+
+        } while(opc!=3);
+        
     }
 }
