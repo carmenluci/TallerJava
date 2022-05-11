@@ -1,13 +1,16 @@
 import java.util.Scanner;
 public class Ejercicio1 {
     public static void main(String[] args) {
-        String nombre, apellidos;
+
+        int edad;
+
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Pro favor escriba su nombre:");
-        nombre = teclado.nextLine();
+        System.out.println("Escriba su edad");
+        edad = teclado.nextInt();
 
-        System.out.println("Pro favor escriba sus apellidos:");
-        apellidos = teclado.nextLine();
+        if (edad>=18) {
+            System.out.println("Usted es mayor de edad");
+        }
     }
 }

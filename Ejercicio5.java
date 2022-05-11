@@ -1,24 +1,35 @@
 import java.util.Scanner;
-
 public class Ejercicio5 {
     public static void main(String[] args) {
-        String nomMascota, tipoMasc, nombreAmo;
-        int edadMasc;
+        int productos, s, p, c;
+        String caractcas, razonDev, compProducto;
 
         Scanner teclado = new Scanner(System.in);
+        System.out.println("¿Qué producto desea comprar?");
+        compProducto =teclado.nextLine();
 
-        System.out.println("Por favor escriba el nombre de su mascota:");
-        nomMascota = teclado.nextLine();
+        System.out.println("1. Consultar precio del producto");
+        System.out.println("2. Comprar prducto");
+        System.out.println("3. Realizar devolución");
+        productos = teclado.nextInt();
 
-        System.out.println("Por favor escriba la edad de su mascota:");
-        edadMasc = teclado.nextInt();
-
-        System.out.println("Que tipo de mascota tiene:");
-        tipoMasc = teclado.nextLine();
-
-        System.out.println("Dueño de la mascota:");
-        nombreAmo = teclado.nextLine();
-
-        System.out.println(nomMascota+" es un(a) "+tipoMasc+", el cual tiene "+edadMasc+" años de edad y "+nombreAmo+" es su dueño(a)");
+        if (productos==1) {
+            s = 65000;
+            p = 53000; 
+            c = 47000;
+            System.out.println("Medicamentos: "+s);
+            System.out.println("Aseo personal: "+p);
+            System.out.println("Cuidado de la piel: "+c);
+        }
+        if (productos==2) {
+            System.out.println("Su producto ha sido asignado a la lista de compra");
+        }
+        if (productos==3) {
+            System.out.println("Escriba la razón de la devolución del producto");
+            teclado.nextLine();
+            caractcas = teclado.nextLine();
+        }else {
+            System.out.println("Gracias por visitar nuestra tienda virtual, que tenga un buen día");
+        }
     }
 }
